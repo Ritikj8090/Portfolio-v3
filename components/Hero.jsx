@@ -13,7 +13,7 @@ const Hero = () => {
   const [weather, setWeather] = useState([]);
   const fetchWeatherApi = async () => {
     const res = await axios.get(
-      "http://api.weatherapi.com/v1/current.json?key=29af781717ea4d9687b120028232611&q=india"
+      "https://api.weatherapi.com/v1/current.json?key=29af781717ea4d9687b120028232611&q=india"
     );
     setWeather(res.data);
     console.log(res.data);
