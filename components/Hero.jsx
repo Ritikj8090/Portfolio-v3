@@ -16,7 +16,7 @@ const Hero = () => {
       "https://api.weatherapi.com/v1/current.json?key=29af781717ea4d9687b120028232611&q=india"
     );
     setWeather(res.data);
-    console.log(res.data);
+    console.log(res.data); 
   };
   const fetch = async () => {
     const res = await axios.get("https://portfolio-v3-jkzxwebna-ritikj8090.vercel.app/api/visitor")
