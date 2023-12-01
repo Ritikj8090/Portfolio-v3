@@ -1,12 +1,7 @@
 import visitorSchema from "@/models/visitor.schema";
 import connectToDB from "../../mongodb";
 import { NextResponse } from "next/server";
-import Cors from 'cors';
 
-const cors = Cors({
-    allowedMethods: ['PUT', 'OPTIONS'], // Adjust the allowed methods as needed
-  });
-  
 const PUT = async (request, {params:{id}}) => {
     const {visit} = await request.json();
     await connectToDB();
@@ -19,4 +14,4 @@ const PUT = async (request, {params:{id}}) => {
     }, {status: 200})
   };
   
-  export default cors(PUT)
+  export default PUT
