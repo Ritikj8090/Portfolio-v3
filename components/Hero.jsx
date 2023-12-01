@@ -15,14 +15,13 @@ const Hero = () => {
     const res = await axios.get(
       "https://api.weatherapi.com/v1/current.json?key=29af781717ea4d9687b120028232611&q=india"
     );
-    setWeather(res.data);
-    console.log(res.data); 
+    setWeather(res.data); 
   };
   const fetch = async () => {
-    const res = await axios.get("https://portfolio-v3-jkzxwebna-ritikj8090.vercel.app/api/visitor")
+    const res = await axios.get("https://portfolio-v3-dusky.vercel.app/api/visitor")
     setVisitor(res.data.data[0].visit)
     const newVisitor = res.data.data[0].visit + 1
-    await axios.put("https://portfolio-v3-jkzxwebna-ritikj8090.vercel.app/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
+    await axios.put("https://portfolio-v3-dusky.vercel.app/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
   }
 
   useEffect(() => {

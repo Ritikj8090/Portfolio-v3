@@ -12,6 +12,7 @@
     "@react-three/drei": "^9.89.0",
     "@react-three/fiber": "^8.15.11",
     "axios": "^1.6.2",
+    "cors": "^2.8.5",
     "framer-motion": "^10.16.5",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.1",
