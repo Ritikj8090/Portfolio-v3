@@ -21,7 +21,7 @@ const Hero = () => {
     const res = await axios.get("https://ritik-jaiswal.vercel.app/api/visitor")
     setVisitor(res.data.data[0].visit)
     const newVisitor = res.data.data[0].visit + 1
-    await axios.put("http://localhost:3000/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
+    await axios.put("https://ritik-jaiswal.vercel.app/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
   }
 
   useEffect(() => {
