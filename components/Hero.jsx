@@ -14,7 +14,7 @@ const Hero = () => {
   const fetchWeatherApi = async () => {
     const res = await axios.get(
       "https://api.weatherapi.com/v1/current.json?key=29af781717ea4d9687b120028232611&q=india"
-    );
+    ); 
     setWeather(res.data); 
   };
   const fetch = async () => {
