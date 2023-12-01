@@ -20,7 +20,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
       try {
-        await axios.post('http://localhost:3000/api/contact', formData)
+        await axios.post('https://portfolio-v3-dusky.vercel.app/api/contact', formData)
         setSuccess("success")
       } catch (error) {
         setSuccess("failed")
