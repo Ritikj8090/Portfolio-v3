@@ -18,10 +18,10 @@ const Hero = () => {
     setWeather(res.data); 
   };
   const fetch = async () => {
-    const res = await axios.get("https://portfolio-v3-dusky.vercel.app/api/visitor")
+    const res = await axios.get("https://ritik-jaiswal.vercel.app/api/visitor")
     setVisitor(res.data.data[0].visit)
     const newVisitor = res.data.data[0].visit + 1
-    await axios.put("https://portfolio-v3-dusky.vercel.app/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
+    await axios.put("http://localhost:3000/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
   }
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Hero = () => {
             <span>{weather.location.country.toUpperCase()}</span>
             <span>{weather.location.localtime.slice(10, 13) > 12 ?
               <>{weather.location.localtime.slice(10, 13) - 12} <span className="cursor">:</span> {weather.location.localtime.slice(14)} PM</>
-              : <>{weather.location.localtime.slice(10, 13)  === " 0:" ? "12" : ""} <span className="cursor">:</span> {weather.location.localtime.slice(14)} AM</>
+              : <>{weather.location.localtime.slice(10, 13)  === " 0:" ? "12" : weather.location.localtime.slice(10, 13).length === 3 ? weather.location.localtime.slice(10, 12) : weather.location.localtime.slice(10, 13)} <span className="cursor">:</span> {weather.location.localtime.slice(14)} AM</>
             }</span>
 
 

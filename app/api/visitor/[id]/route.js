@@ -1,8 +1,9 @@
+"use server"
 import visitorSchema from "@/models/visitor.schema";
 import connectToDB from "../../mongodb";
 import { NextResponse } from "next/server";
 
-const PUT = async (request, {params:{id}}) => {
+export const PUT = async (request, {params:{id}}) => {
     const {visit} = await request.json();
     await connectToDB();
     await visitorSchema.findByIdAndUpdate(id, {visit:visit});
@@ -13,5 +14,3 @@ const PUT = async (request, {params:{id}}) => {
 
     }, {status: 200})
   };
-  
-  export default PUT
