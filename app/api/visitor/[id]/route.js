@@ -11,6 +11,6 @@ export const PUT = async (request, {params:{id}}) => {
         message: "updated",
         data: res,
 
-    }, {status: 202})
+    }, {status: 200})
   };
   

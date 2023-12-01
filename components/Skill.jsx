@@ -1,12 +1,4 @@
 import React from 'react'
-import html from '../public/svg/html.svg';
-import css from '../public/svg/css.svg';
-import javascript from '../public/svg/javascript.svg';
-import nodejs from '../public/svg/nodejs.svg';
-import react from '../public/svg/react.svg';
-import nextjs from '../public/svg/nextjs.svg';
-import mongodb from '../public/svg/mongodb.svg';
-import mysql from '../public/svg/mysql.svg';
 import Image from 'next/image';
 import { backend, frontend, other } from '../constant/index';
 import StarsCanvas from './StarBackground';
@@ -14,7 +6,7 @@ import StarsCanvas from './StarBackground';
 const Skill = () => {
   return (
     <div id='skill' className='h-full w-full px-3 md:px-20 xl:px-72 pt-20 relative'>
-         <StarsCanvas />
+     
       <div className='flex justify-center items-center text-2xl md:text-4xl pb-16'>
         My Skillsets
       </div>

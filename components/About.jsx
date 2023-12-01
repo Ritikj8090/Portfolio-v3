@@ -8,7 +8,7 @@ const About = () => {
   const [mode, setMode] = useState("dark")
   return (
     <div id="about" className="h-full w-full flex px-3 md:px-20 xl:px-72 relative pt-20">
-         <StarsCanvas />
+        
       <div className="w-full dark rounded-lg relative z-[-10]">
         <div className="p-2 flex w-full justify-between">
           <div className="flex gap-2">

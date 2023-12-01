@@ -29,7 +29,7 @@ const Contact = () => {
     }
   return (
     <div id="contact" className="h-full w-full md:flex md:px-20 xl:px-72 relative  py-20">
-         <StarsCanvas />
+      
       { success === "success" ?<Alert logo={"success"} message={"Succesful"} /> : success === "failed" ? <Alert logo={"failed"} message={"Failed"} /> : ""}
       <div className="md:w-[50%] w-full">
         <div className="text-2xl flex items-center justify-center w-full ">
