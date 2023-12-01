@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body style={{fontFamily: 'Azonix'}} className='{inter.className}'>
+      <StarsCanvas />
         {children}
       </body>
     </html>
