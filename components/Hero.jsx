@@ -27,7 +27,7 @@ const Hero = () => {
   useEffect(() => {
     fetch()
     fetchWeatherApi();
-  }, []);
+  }, []); 
   return (
     <div id="home" className="pt-20 h-screen relative flex w-full flex-col items-center justify-center">
       
