@@ -11,7 +11,7 @@ import Msg from "./Msg";
 const Hero = () => {
   const [Visitor, setVisitor] = useState()
   const [weather, setWeather] = useState([]);
-  const [url, seturl] = useState('http://localhost:3000')
+  const url = process.env.NODE_ENV === "production" ? "https://ritik-jaiswal.vercel.app" : "http://localhost:3000"
   const fetchWeatherApi = async () => {
     const res = await axios.get(
       "https://api.weatherapi.com/v1/current.json?key=29af781717ea4d9687b120028232611&q=india"
@@ -20,7 +20,6 @@ const Hero = () => {
   };
 
   const fetch = async () => {
-    process.env.NODE_ENV === "production" ? seturl("https://ritik-jaiswal.vercel.app") : seturl("http://localhost:3000")
     console.log(url+"/api/visitor")
     const res = await axios.get(url + "/api/visitor")
     setVisitor(res.data.data[0].visit)
@@ -43,7 +42,7 @@ const Hero = () => {
         <div className="absolute right-5 top-32 flex flex-col items-end xl:right-32">
           <div className="flex gap-1">
             <span>{weather.current.temp_c}&deg;C</span>
-            <img src={weather.current.condition.icon} alt="" className="w-5 h-6" />
+            <img src={weather.current.condition.icon} alt="" width={5} height={5} className="w-5 h-6" />
             <span>{weather.location.country.toUpperCase()}</span>
             <span>{weather.location.localtime.slice(10, 13) > 12 ?
               <>{weather.location.localtime.slice(10, 13) - 12} <span className="cursor">:</span> {weather.location.localtime.slice(14)} PM</>
