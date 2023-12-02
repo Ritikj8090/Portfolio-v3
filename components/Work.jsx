@@ -11,7 +11,7 @@ import StarsCanvas from "./StarBackground";
 const Work = () => {
   return (
     <div id="work" className="h-full px-2 md:px-20 pt-20 xl:px-72 w-full relative">
-        
+        <StarsCanvas />
       <div className="flex justify-center items-center text-2xl md:text-4xl pb-16">My Projects</div>
       <div className=" flex-col gap-16 sm:flex hidden">
         {project.map((pro) => {

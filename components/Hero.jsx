@@ -8,6 +8,7 @@ import person from '../public/image/person.png';
 import StarsCanvas from "./StarBackground";
 import Msg from "./Msg";
 
+
 const Hero = () => {
   const [Visitor, setVisitor] = useState()
   const [weather, setWeather] = useState([]);
@@ -39,7 +40,7 @@ const Hero = () => {
           <Image src={loading1} alt="" width={60} height={30} />
         </div>
       ) : (
-        <div className="absolute right-5 top-32 flex flex-col items-end xl:right-32">
+        <div className="absolute right-5 sm:text-lg text-xs top-32 flex flex-col items-end xl:right-32">
           <div className="flex gap-1">
             <span>{weather.current.temp_c}&deg;C</span>
             <img src={weather.current.condition.icon} alt="" width={5} height={5} className="w-5 h-6" />
