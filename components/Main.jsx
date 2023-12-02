@@ -13,9 +13,9 @@ const Main = () => {
 
     const [first, setFirst] = useState(true)
     useEffect(() => {
-        const time = setTimeout(() => {
+        setTimeout(() => {
             setFirst(false)
-        }, 0)
+        }, 5000)
     
     })
   return (
