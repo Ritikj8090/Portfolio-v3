@@ -7,5 +7,5 @@ export const GET = async (request) => {
   await connectToDB();
   const visit = await visitorSchema.find();
   console.log(visit)
-  return  new NextResponse(JSON.stringify({message:"ok", data:visit}),{status:200})
+  return  new NextResponse(JSON.stringify({message:"ok", data:visit}),{status:201})
 }

@@ -11,3 +11,10 @@ export const PUT = async (request, {params:{id}}) => {
     const res = await visitorSchema.findOne({_id:id})
     return new NextResponse(JSON.stringify({message:"ok", data:res}),{status:200})
   };
+
+  export const GET = async (request, {params:{id}}) => {
+    await connectToDB();
+    const res = await visitorSchema.findOne({_id:id})
+    console.log(res)
+    return new NextResponse(JSON.stringify({message:"ok", res}),{status:200})
+  };

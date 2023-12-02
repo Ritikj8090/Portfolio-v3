@@ -20,10 +20,10 @@ const Hero = () => {
   };
 
   const fetch = async () => {
-    console.log(url+"/api/visitor")
-    const res = await axios.get(url + "/api/visitor")
-    setVisitor(res.data.data[0].visit)
-    const newVisitor = res.data.data[0].visit + 1
+    const res = await axios.get(url + "/api/visitor/6565f5237a898e80a86d1942")
+    console.log(res.data.res.visit)
+    setVisitor(res.data.res.visit)
+    const newVisitor = res.data.res.visit + 1
     await axios.put(url + "/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
   }
 
