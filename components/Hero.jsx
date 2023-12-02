@@ -11,17 +11,21 @@ import Msg from "./Msg";
 const Hero = () => {
   const [Visitor, setVisitor] = useState()
   const [weather, setWeather] = useState([]);
+  const [url, seturl] = useState('http://localhost:3000')
   const fetchWeatherApi = async () => {
     const res = await axios.get(
       "https://api.weatherapi.com/v1/current.json?key=29af781717ea4d9687b120028232611&q=india"
     ); 
     setWeather(res.data); 
   };
+
   const fetch = async () => {
-    const res = await axios.get("https://ritik-jaiswal.vercel.app/api/visitor")
+    process.env.NODE_ENV === "production" ? seturl("https://ritik-jaiswal.vercel.app") : seturl("http://localhost:3000")
+    console.log(url+"/api/visitor")
+    const res = await axios.get(url + "/api/visitor")
     setVisitor(res.data.data[0].visit)
     const newVisitor = res.data.data[0].visit + 1
-    await axios.put("https://ritik-jaiswal.vercel.app/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
+    await axios.put(url + "/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
   }
 
   useEffect(() => {
