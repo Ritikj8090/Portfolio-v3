@@ -3,13 +3,9 @@ import connectToDB from "../mongodb";
 import { NextResponse } from "next/server";
 import ContactSchema from '@/models/contact';
 
-const POST = async (request) => {
+export const POST = async (request) => {
     const {name, email, body} = await request.json();
   await connectToDB();
   await ContactSchema.create({name, email, body});
-  return NextResponse.json({
-    message: "Ok",
-  },{status:200})
+  return new NextResponse(JSON.stringify({message:200, }), {status:200})
 }
-
-export default POST
