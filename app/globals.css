@@ -28,7 +28,10 @@ body{
 }
 
 .circle {
-  box-shadow: 1px 1px 15px rgb(34 197 94);
+  box-shadow: 1px 1px 10px rgb(34 197 94),
+                -1px 1px 10px rgb(34 197 94),
+                -1px -1px 10px rgb(34 197 94),
+                1px -1px 10px rgb(34 197 94);
   animation: glow 4s infinite;
 }
 
@@ -142,4 +145,34 @@ body{
 @font-face {
   font-family: Azonix;
   src: url('../public/fonts/Azonix.otf') format('truetype');
+}
+
+
+.text-shadow{
+  text-shadow: 0px 0px 50px  rgb(29 78 216);
+}
+
+/* blur*/
+
+.container {
+  box-shadow: 0 0 1rem 0 rgba(19, 18, 18, 0.2); 
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+ 
+}
+
+.container:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(128, 127, 127, 0.5);
+  filter: blur(10px);
+  
 }

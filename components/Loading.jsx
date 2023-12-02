@@ -20,7 +20,7 @@ const Loading = () => {
         setFirst(false)
     })
   return (
-    <div className={`h-screen w-full flex flex-col items-center justify-center fixed z-[100] bg-black ease-in-out duration-100`}>
+    <div className={`h-screen w-full flex flex-col items-center justify-center fixed bg-black ease-in-out duration-100`}>
         <StarsCanvas />
         <div className='md:w-[400px] w-[200px]'>Loading...</div>
         <div className='bg-[#333] skew-x-[30deg] md:w-[400px] w-[200px] md:h-[40px] h-[30px]'>

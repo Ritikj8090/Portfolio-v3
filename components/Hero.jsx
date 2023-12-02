@@ -19,7 +19,6 @@ const Hero = () => {
     ); 
     setWeather(res.data); 
   };
-
   const fetch = async () => {
     const res = await axios.get(url + "/api/visitor/6565f5237a898e80a86d1942")
     console.log(res.data.res.visit)
@@ -27,7 +26,6 @@ const Hero = () => {
     const newVisitor = res.data.res.visit + 1
     await axios.put(url + "/api/visitor/6565f5237a898e80a86d1942", { visit: newVisitor })
   }
-
   useEffect(() => {
     fetchWeatherApi();
     fetch()
@@ -60,7 +58,7 @@ const Hero = () => {
         </div>
       )}
       <div>
-        <h1 className="lg:text-9xl text-blue-700 font-extrabold text-4xl md:text-8xl tracking-wider cursor-default">Ritik jaiswal</h1>
+        <h1 className="lg:text-9xl text-blue-700 font-extrabold text-4xl md:text-8xl tracking-wider cursor-default text-shadow">Ritik jaiswal</h1>
         <div className=" w-full text-center">
           <div className="block lg:text-3xl md:text-xl text-[10px]">
           <span className="px-2">I <i>design</i> and develop </span>

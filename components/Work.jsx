@@ -13,12 +13,13 @@ const Work = () => {
     <div id="work" className="h-full px-2 md:px-20 pt-20 xl:px-72 w-full relative">
         <StarsCanvas />
       <div className="flex justify-center items-center text-2xl md:text-4xl pb-16">My Projects</div>
+      <hr className="p-2"/>
       <div className=" flex-col gap-16 sm:flex hidden">
         {project.map((pro) => {
           return (
             <div key={pro.number}>
-              <div className="flex w-full h-[300px]">
-                <div className="w-[60%] bg-[#4A4A4A] p-10 relative rounded-lg">
+              <div className="flex w-full h-[300px] container">
+                <div className="w-[60%]  p-10 relative rounded-lg">
                   <div className="text-xl font-bold pb-5">{pro.name}</div>
                   <div className="overflow-hidden h-[140px] font-mono">{pro.description}</div>
                   <div className="absolute bottom-5 flex gap-3 items-center justify-center">
@@ -32,6 +33,7 @@ const Work = () => {
                     </motion.a>
 
                     <motion.div
+                    className="bg-white rounded-full"
                       whileHover={{ scale: 1.3 }}>
                       <Link href={pro.github}>
                         <Image src={github} alt="" width={30} height={30} />

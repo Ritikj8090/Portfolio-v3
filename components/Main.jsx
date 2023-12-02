@@ -15,7 +15,7 @@ const Main = () => {
     useEffect(() => {
         const time = setTimeout(() => {
             setFirst(false)
-        }, 5000)
+        }, 0)
     
     })
   return (

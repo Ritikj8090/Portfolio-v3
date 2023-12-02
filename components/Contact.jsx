@@ -35,6 +35,7 @@ const Contact = () => {
         <div className="text-2xl flex items-center justify-center w-full ">
           Find me on
         </div>
+        <hr className="mx-2"/>
         <div className="p-7 flex gap-5 flex-wrap mr-4 w-full h-full items-center justify-center">
           {contact.map((logo) => {
             return (
@@ -57,6 +58,7 @@ const Contact = () => {
         <div className="text-2xl  flex item-end justify-center ">
           Get In Touch
         </div>
+        <hr className="mx-2"/>
         <form action="" className="p-7 gap-5 flex flex-col">
           <input
             type="text"
