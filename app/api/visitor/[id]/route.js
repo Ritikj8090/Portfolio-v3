@@ -9,5 +9,5 @@ export const PUT = async (request, {params:{id}}) => {
     console.log(visit)
     await visitorSchema.findByIdAndUpdate(id, {visit:visit});
     const res = await visitorSchema.findOne({_id:id})
-    return new NextResponse(JSON.stringify({message:"ok"}),{status:200})
+    return new NextResponse(JSON.stringify({message:"ok", data:res}),{status:200})
   };
