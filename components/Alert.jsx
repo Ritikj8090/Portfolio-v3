@@ -22,9 +22,9 @@ const Alert = ({logo, message}) => {
     <motion.div
       initial={{ y: -150 }}
       animate={{ y: isAnimating ? 0 : -150 }}
-      className="fixed w-full z-40 mt-16 justify-center flex top-0"
+      className="fixed w-full z-40 top-5 left-0 justify-center flex"
     >
-      <div className=" gap-2 flex items-center bg-gray-400 p-2 rounded-lg relative">
+      <div className=" gap-2 w-fit flex items-center bg-gray-400 p-2 rounded-lg relative">
         <Image src={logo === "success" ? success : failed} alt="" width={30} height={30} />
         <span>{message}</span>
       </div>
