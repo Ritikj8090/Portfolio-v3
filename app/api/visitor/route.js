@@ -6,6 +6,7 @@ import { NextResponse } from "next/server";
 export const GET = async (request) => {
   await connectToDB();
   const visit = await visitorSchema.find();
+  console.log(visit)
   return NextResponse.json({
     message: "Ok",
     data: visit
