@@ -32,7 +32,7 @@ const Hero = () => {
   }, []); 
   return (
     <div id="home" className="pt-20 h-screen relative flex w-full flex-col items-center justify-center">
-      
+      <StarsCanvas />
       {weather.length <= 0 ? (
         <div className=" absolute right-5 xl:right-32 top-32 flex flex-col items-end pt-5 pr-5">
           <Image src={loading1} alt="" width={60} height={30} />

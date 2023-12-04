@@ -11,11 +11,11 @@ const Skill = () => {
         My Skillsets
       </div>
       <hr className='p-2'/>
-      <div  className=' flex justify-between gap-2 flex-wrap '>
+      <div  className=' flex justify-center gap-2 flex-wrap '>
       <div className='container w-[400px] min:w-[300px] p-2 rounded-lg h-fit'>
         <h1 className='flex justify-center items-center mb-5 p-2 rounded-lg text-xl md:text-2xl'>Front-End</h1>
         <hr />
-        <div className='flex gap-5 flex-wrap  p-2 rounded-lg'>
+        <div className='flex gap-5 flex-wrap  p-2  rounded-lg'>
           {
             frontend.map((skill) => {
               return (
