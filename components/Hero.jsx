@@ -59,8 +59,8 @@ const Hero = ({ dot, border }) => {
             <span>
               {weather.location.localtime.slice(10, 13) > 12 ? (
                 <>
-                  {weather.location.localtime.slice(10, 13) - 12}{" "}
-                  <span className="cursor">:</span>{" "}
+                  {weather.location.localtime.slice(10, 13) - 12}
+                  <span className="cursor px-1">:</span>
                   {weather.location.localtime.slice(14)} PM
                 </>
               ) : (
@@ -69,8 +69,8 @@ const Hero = ({ dot, border }) => {
                     ? "12"
                     : weather.location.localtime.slice(10, 13).length === 3
                     ? weather.location.localtime.slice(10, 12)
-                    : weather.location.localtime.slice(10, 13)}{" "}
-                  <span className="cursor">:</span>{" "}
+                    : weather.location.localtime.slice(10, 13)}
+                  <span className="cursor px-1">:</span>
                   {weather.location.localtime.slice(14)} AM
                 </>
               )}
@@ -82,7 +82,7 @@ const Hero = ({ dot, border }) => {
           </div>
           <div className="flex gap-1">
             visitor - {Visitor}{" "}
-            <Image src={person} alt="" className="h-5 w-5" />
+            <Image src={person} alt="" className="h-5 mt-1 flex items-center w-5" />
           </div>
         </div>
       )}
@@ -118,7 +118,7 @@ const Hero = ({ dot, border }) => {
         whileHover={{ scale: 1.2 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, animationDuration: 5, type: easeInOut }}
-        className=" absolute bottom-5 right-5 bg-blue-700 hover:bg-blue-800 text-black rounded-xl py-2 px-3"
+        className=" absolute bottom-5 right-5 bg-blue-700 hover:bg-blue-800  rounded-xl py-2 px-3"
         onClick={() => window.open("/RITIK.pdf")}
         download={true}
         onMouseEnter={() => {
