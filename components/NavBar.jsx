@@ -6,7 +6,7 @@ import menu from '../public/svg/menu.svg';
 import close from '../public/svg/close.svg';
 import Image from "next/image";
 
-const NavBar = () => {
+const NavBar = ({dot, border}) => {
 
   const [prevScroll, setprevScroll] = useState(0);
   const [activeNavBar, setActiveNavBar] = useState("#home");
@@ -34,11 +34,17 @@ const NavBar = () => {
   const [menuToggle, setMenuToggle] = useState(true)
 
   return (
-    <nav id="navlist" className=" w-full fixed z-30 p-5 ease-in-out duration-700">
+    <nav id="navlist" className=" w-full  fixed z-10 p-5 ease-in-out duration-700 bg-transparent">
       <div className="flex bg rounded-3xl justify-between gap-10 mx-4 p-2 px-5 ">
       <div
         onClick={() => scrollTo(0, 0)}
-        className="flex items-center justify-center md:text-4xl text-2xl tracking-wide cursor-pointer"
+        className="flex items-center justify-center md:text-4xl text-2xl tracking-wide cursor-none"
+        onMouseEnter={() => {
+          border.style = `width:50px; height:50px; border: 3px solid; transition: ease-in-out .2s; mix-blend-mode: difference;`;
+        }}
+        onMouseLeave={() => {
+          border.style = `width:25px; height:25px; transition: ease-in-out .2s; mix-blend-mode: difference;`;
+        }}
       >
         RITIK<span className=" text-blue-700 cursor">_</span>
       </div>
@@ -50,8 +56,14 @@ const NavBar = () => {
               key={link.number}
               className={`relative items-center justify-center text-gray-300 ${
                 activeNavBar === link.link ? "text-white" : ""
-              } hover:text-gray-500`}
+              } hover:text-gray-500 cursor-none`}
               onClick={() => setActiveNavBar(link.link)}
+              onMouseEnter={() => {
+                border.style = `width:50px; height:50px; border: 3px solid; transition: ease-in-out .2s; mix-blend-mode: difference;`;
+              }}
+              onMouseLeave={() => {
+                border.style = `width:25px; height:25px; transition: ease-in-out .2s; mix-blend-mode: difference;`;
+              }}
             >
               <span className="flex justify-end text-[10px] relative top-2">
                 {link.number}

@@ -6,7 +6,7 @@ import StarsCanvas from './StarBackground';
 const Skill = () => {
   return (
     <div id='skill' className='h-full w-full px-3 md:px-20 xl:px-72 pt-20 relative'>
-     <StarsCanvas />
+     
       <div className='flex justify-center items-center text-2xl md:text-4xl pb-16'>
         My Skillsets
       </div>
