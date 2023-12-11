@@ -1,11 +1,20 @@
 "use client"
 import { about } from "@/constant";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StarsCanvas from "./StarBackground";
 
 const About = () => {
-  const [mode, setMode] = useState("dark")
+
+  const date = new Date()
+  const [time, settime] = useState({
+    year: date.getFullYear() - 2000,
+    month: Math.abs(date.getMonth() - 8),
+    date: Math.abs(date.getDate() - 18),
+    hour: date.getHours(),
+    minute: date.getMinutes(),
+    second: date.getSeconds()
+})
   return (
     <div id="about" className="h-full w-full flex px-3 md:px-20 xl:px-72 relative pt-20">
         
@@ -69,7 +78,7 @@ const About = () => {
               <span className="text-[#24e33a]">
                 Day Of Birth TimeStamp{" "}
                 <span className="text-red-500">
-                  = <span className="text-yellow-600">time</span>
+                  = <span className="text-yellow-600">{time.year + "Y " + time.month + "M " + time.date + "D "}{time.hour + "H : " + time.minute + "M : " +time.second + "S"}</span>
                 </span>
               </span>
             </div>

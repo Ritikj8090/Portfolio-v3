@@ -41,15 +41,6 @@ const Main = () => {
             { duration: 500, fill: "forwards" }
           );
         });
-        const VisiterUpdate = async () => {
-          const visit = await axios.get('https://portfolio-v2-production-30b2.up.railway.app/visit/653fbc79e7d068a47fb8cca3')
-          const curr = visit.data.resa.visit
-          const newCurr = curr + 1
-          setVisiter(newCurr)
-          await axios.put('https://portfolio-v2-production-30b2.up.railway.app/visit/653fbc79e7d068a47fb8cca3', {visit: newCurr})
-        }
-        VisiterUpdate()
-    
       }, []);
 
     useEffect(() => {

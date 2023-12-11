@@ -35,6 +35,8 @@ const Hero = ({ dot, border }) => {
     fetchWeatherApi();
     fetch();
   }, []);
+
+   
   return (
     <section
       id="home"
@@ -48,12 +50,12 @@ const Hero = ({ dot, border }) => {
         <div className="absolute right-5 sm:text-lg text-xs top-32 flex flex-col items-end xl:right-32">
           <div className="flex gap-1">
             <span>{weather.current.temp_c}&deg;C</span>
-            <img
-              src={weather.current.condition.icon}
+            <Image
+              src={"https:" + weather.current.condition.icon}
               alt=""
               width={5}
               height={5}
-              className="w-5 h-6"
+              className="sm:w-5 w-3 sm:h-6 h-3"
             />
             <span>{weather.location.country.toUpperCase()}</span>
             <span>
@@ -82,7 +84,7 @@ const Hero = ({ dot, border }) => {
           </div>
           <div className="flex gap-1">
             visitor - {Visitor}{" "}
-            <Image src={person} alt="" className="h-5 mt-1 flex items-center w-5" />
+            <Image src={person} alt="" className="sm:h-5 h-3 mt-[2px] flex items-center sm:w-5 w-3 justify-center" />
           </div>
         </div>
       )}
@@ -118,7 +120,7 @@ const Hero = ({ dot, border }) => {
         whileHover={{ scale: 1.2 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, animationDuration: 5, type: easeInOut }}
-        className=" absolute bottom-5 right-5 bg-blue-700 hover:bg-blue-800  rounded-xl py-2 px-3"
+        className=" fixed bottom-5 right-5 bg-blue-700 hover:bg-blue-800  rounded-xl py-2 px-3"
         onClick={() => window.open("/RITIK.pdf")}
         download={true}
         onMouseEnter={() => {
