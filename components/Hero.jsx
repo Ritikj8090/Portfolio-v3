@@ -24,7 +24,6 @@ const Hero = ({ dot, border }) => {
   };
   const fetch = async () => {
     const res = await axios.get(url + "/api/visitor/6565f5237a898e80a86d1942");
-    console.log(res.data.res.visit);
     setVisitor(res.data.res.visit);
     const newVisitor = res.data.res.visit + 1;
     await axios.put(url + "/api/visitor/6565f5237a898e80a86d1942", {
@@ -36,7 +35,13 @@ const Hero = ({ dot, border }) => {
     fetch();
   }, []);
 
-   
+   const handleResumeDownloads = async() => {
+    window.open("/RITIK.pdf")
+    const res = await axios.get(url + "/api/resume/657ab6755bbd82454aa32a4d");
+    const cnt = res.data.res.downloads + 1
+    await axios.put(url + "/api/resume/657ab6755bbd82454aa32a4d", {downloads:cnt});
+   }
+
   return (
     <section
       id="home"
@@ -120,8 +125,8 @@ const Hero = ({ dot, border }) => {
         whileHover={{ scale: 1.2 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, animationDuration: 5, type: easeInOut }}
-        className=" fixed bottom-5 right-5 bg-blue-700 hover:bg-blue-800  rounded-xl py-2 px-3"
-        onClick={() => window.open("/RITIK.pdf")}
+        className=" fixed bottom-5 right-5 bg-blue-700 hover:bg-blue-800  rounded-xl py-2 px-3 z-[10]"
+        onClick={() => handleResumeDownloads()}
         download={true}
         onMouseEnter={() => {
           border.style = `width:50px; height:50px; border: 3px solid; transition: ease-in-out .2s; mix-blend-mode: difference;`;
