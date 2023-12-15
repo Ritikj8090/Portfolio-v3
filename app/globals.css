@@ -154,7 +154,10 @@ body{
 
 
 .text-shadow{
-  text-shadow: 0px 0px 50px  rgb(29 78 216);
+  
+  background: linear-gradient(to right, #47b1e2 0%, #0e238d 100%);
+  background-clip: text;
+  color: transparent;
 }
 
 /* blur*/

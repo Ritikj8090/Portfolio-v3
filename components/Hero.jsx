@@ -95,7 +95,7 @@ const Hero = ({ dot, border }) => {
       )}
       <div>
         <h1
-          className="lg:text-9xl text-blue-700 font-extrabold text-4xl md:text-8xl tracking-wider  text-shadow"
+          className="lg:text-9xl  font-extrabold text-4xl md:text-8xl tracking-wider  text-shadow"
           onMouseEnter={() => {
             border.style = `width:50px; height:50px; border: 3px solid; transition: ease-in-out .2s; mix-blend-mode: difference;`;
           }}
