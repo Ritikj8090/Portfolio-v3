@@ -155,9 +155,23 @@ body{
 
 .text-shadow{
   
-  background: linear-gradient(to right, #47b1e2 0%, #0e238d 100%);
+  background: linear-gradient(to right, #3685aa , #0e238d,  #d8e247 , #8d360e, #8a47e2 , #890e8d, #6453c2 , #08a5d4);
   background-clip: text;
   color: transparent;
+  animation: color 25s ease-in-out infinite;
+  background-size: 500% 500%;
+}
+
+@keyframes color{
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
 }
 
 /* blur*/
