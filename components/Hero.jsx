@@ -84,7 +84,7 @@ const Hero = ({ dot, border }) => {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="rounded-full w-2.5 h-2.5  bg-green-500 circle"></div>
+            <div className="rounded-full sm:w-2.5 sm:h-2.5 w-1.5 h-1.5  bg-green-500 circle"></div>
             AVAILABLE For WORK
           </div>
           <div className="flex gap-1">
@@ -125,7 +125,7 @@ const Hero = ({ dot, border }) => {
         whileHover={{ scale: 1.2 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, animationDuration: 5, type: easeInOut }}
-        className=" fixed bottom-5 right-5 bg-blue-700 hover:bg-blue-800  rounded-xl py-2 px-3 z-[10]"
+        className=" fixed bottom-5 right-5 bg-blue-700 hover:bg-blue-800  rounded-xl sm:py-2 sm:px-3 py-1.5 px-2 sm:text-xl text-sm z-[10]"
         onClick={() => handleResumeDownloads()}
         download={true}
         onMouseEnter={() => {
