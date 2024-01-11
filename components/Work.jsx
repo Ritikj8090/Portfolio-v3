@@ -7,8 +7,18 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import github from "../public/svg/github.svg";
 import StarsCanvas from "./StarBackground";
+import axios from "axios";
 
 const Work = ({ dot, border }) => {
+
+  const handleProjectVisit = async (name) => {
+    const project = await axios.get(`/api/projectVisit/${name}`)
+    const id = project.data._id
+    const pro_name = project.data.ProjectName
+    const count = project.data.projectVisit + 1
+
+    await axios.put(`/api/projectVisit/${id}`, {count: count})
+  }
   return (
     <div
       id="work"
@@ -31,6 +41,8 @@ const Work = ({ dot, border }) => {
                   <div className="absolute bottom-5 flex gap-3 items-center justify-center">
                     <motion.a
                       href={pro.link}
+                      target="_blank"
+                      onClick={() => handleProjectVisit(pro.name)}
                       className="py-2 px-4 gap-3 bg-blue-500 rounded-2xl flex items-center justify-center"
                       whileHover={{
                         scale: 1.1,
