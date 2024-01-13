@@ -227,3 +227,8 @@ body{
   pointer-events: none;
   transform: translate(-50%, -50%);
 }
+
+.glass{
+  background: rgba(128, 128, 128, 0.178);
+  border-radius: 5px;
+}

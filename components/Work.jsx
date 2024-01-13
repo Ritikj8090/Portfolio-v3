@@ -32,7 +32,7 @@ const Work = ({ dot, border }) => {
         {project.map((pro) => {
           return (
             <div key={pro.number}>
-              <div className="flex w-full h-[300px] container">
+              <div className="flex w-full h-[300px] glass ">
                 <div className="w-[60%]  p-10 relative rounded-lg">
                   <div className="text-xl font-bold pb-5">{pro.name}</div>
                   <div className="overflow-hidden h-[140px] font-mono">
