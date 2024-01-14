@@ -41,7 +41,7 @@ const Work = ({ dot, border }) => {
                   <div className="absolute bottom-5 flex gap-3 items-center justify-center">
                     <motion.a
                       href={pro.link}
-                      onClick={() => handleProjectVisit(pro.name)}
+                      
                       className="py-2 px-4 gap-3 bg-blue-500 rounded-2xl flex items-center justify-center"
                       whileHover={{
                         scale: 1.1,
