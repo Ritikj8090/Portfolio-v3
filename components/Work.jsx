@@ -123,12 +123,12 @@ const Work = ({ dot, border }) => {
                 <p className="font-mono">{pro.description}</p>
               </div>
               <div className="pt-10 flex items-center gap-3">
-                <motion.a
-                  href={"/"}
+                <motion.div
+                  onClick={() => handleProjectVisit(pro.name, pro.link)}
                   className="py-2 px-4 gap-2 bg-blue-500 rounded-2xl flex items-center justify-center"
                   whileHover={{
                     scale: 1.1,
-                    boxShadow: "0px 4px 8px rgba(255, 0, 0, 0.5)",
+                    boxShadow: "0px 4px 8px rgba(0, 0, 139, 0.5)",
                   }}
                   onMouseEnter={() => {
                     border.style = `width:50px; height:50px; border: 3px solid; transition: ease-in-out .2s; mix-blend-mode: difference;`;
@@ -138,7 +138,7 @@ const Work = ({ dot, border }) => {
                   }}
                 >
                   <span>Live</span> <span className="live-icon"></span>
-                </motion.a>
+                </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.3 }}
