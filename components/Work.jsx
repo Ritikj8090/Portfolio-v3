@@ -11,7 +11,8 @@ import axios from "axios";
 
 const Work = ({ dot, border }) => {
 
-  const handleProjectVisit = async (name) => {
+  const handleProjectVisit = async (name, link) => {
+    window.open(link)
     const project = await axios.get(`/api/projectVisit/${name}`)
     const id = project.data._id
     const pro_name = project.data.ProjectName
@@ -39,9 +40,8 @@ const Work = ({ dot, border }) => {
                     {pro.description}
                   </div>
                   <div className="absolute bottom-5 flex gap-3 items-center justify-center">
-                    <motion.a
-                      href={pro.link}
-                      
+                    <motion.div
+                      onClick={() => handleProjectVisit(pro.name, pro.link)}
                       className="py-2 px-4 gap-3 bg-blue-500 rounded-2xl flex items-center justify-center"
                       whileHover={{
                         scale: 1.1,
@@ -55,7 +55,7 @@ const Work = ({ dot, border }) => {
                       }}
                     >
                       <span>Live</span> <span className="live-icon"></span>
-                    </motion.a>
+                    </motion.div>
 
                     <motion.div
                       className="bg-white rounded-full"
